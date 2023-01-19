@@ -10,12 +10,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  androidBuild:
+  buildAndroid:
+    name: buildAndroid
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        arch: [release, debug]
-
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -72,6 +69,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
-          name: androidBuild-${{ matrix.arch }}
-          path: export/${{ matrix.arch }}/android/bin/app/build/outputs/apk/debug
-          if-no-files-found: error
+          name: androidBuild
+          path: export/release/android/bin/app/build/outputs/apk/debug
