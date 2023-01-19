@@ -39,7 +39,7 @@ jobs:
         with:
           haxe-version: 4.2.5
 
-      - name: Installing Libraries
+      - name: Install Haxelib
         run: |
           haxelib --quiet install hxcpp
           haxelib --quiet install format
@@ -53,7 +53,7 @@ jobs:
           haxelib --quiet git hxCodec https://github.com/polybiusproxy/hxCodec.git
           haxelib list
 
-      - name: Configure Android
+      - name: Setup Lime
         run: |
           haxelib run lime setup -alias -y
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
@@ -63,10 +63,10 @@ jobs:
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
-      - name: Building
-        run: haxelib run lime build android -${{ matrix.arch }}
+      - name: Compile
+        run: haxelib run lime build android
 
-      - name: Upload Artifact
+      - name: Publish Artifact
         uses: actions/upload-artifact@main
         with:
           name: androidBuild
