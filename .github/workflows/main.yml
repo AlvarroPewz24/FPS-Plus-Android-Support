@@ -37,8 +37,8 @@ jobs:
           sudo apt-get install libvlccore-dev
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
-          haxelib install lime 7.9.0
-          haxelib install openfl 9.1.0
+          haxelib install lime
+          haxelib install openfl
           haxelib --never install flixel
           haxelib run lime setup flixel
           haxelib run lime setup
@@ -80,8 +80,8 @@ jobs:
         run: |
           haxelib setup C:/haxelib
           haxelib install hxcpp > nul
-          haxelib install lime 7.9.0
-          haxelib install openfl 9.1.0
+          haxelib install lime
+          haxelib install openfl
           haxelib --never install flixel
           haxelib run lime setup flixel
           haxelib run lime setup
@@ -124,8 +124,8 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
-          haxelib install lime 7.9.0
-          haxelib install openfl 9.1.0
+          haxelib install lime
+          haxelib install openfl
           haxelib --never install flixel
           haxelib run lime setup flixel
           haxelib run lime setup
@@ -182,8 +182,8 @@ jobs:
           haxelib --quiet install hxcpp
           haxelib --quiet install format
           haxelib --quiet install hxp
-          haxelib --quiet install lime 7.9.0
-          haxelib --quiet install openfl 9.1.0
+          haxelib --quiet install lime
+          haxelib --quiet install openfl
           haxelib --never install flixel
           haxelib --quiet install flixel-addons
           haxelib --quiet install flixel-ui
